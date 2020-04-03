@@ -6,8 +6,6 @@ import './styles/main.scss';
 
 import App from './components/App';
 
-if (process.env.NODE_ENV === 'development') {
-    configureFakeBackend();
-}
+configureFakeBackend();
 
 ReactDOM.render(<App/>, document.querySelector('#app'));
