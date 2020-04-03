@@ -8,7 +8,7 @@ module.exports = {
     mode: 'production',
     output: {
         filename: 'js/[name].[hash].js',
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '../', 'dist'),
         chunkFilename: 'js/[name].[chunkhash].js',
     },
     optimization: {

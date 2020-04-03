@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     output: {
         filename: '[name].js',
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, '../', 'dist'),
         chunkFilename: '[name].js',
     },
     module: {
@@ -18,9 +18,14 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: path.join(__dirname, '/dist'),
+        contentBase: path.join(__dirname, '../', 'dist'),
         compress: true,
         hot: true,
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    devtool: 'eval-source-map',
+    plugins: [
+        new webpack.HotModuleReplacementPlugin({
+            multiStep: true,
+        }),
+    ],
 };
